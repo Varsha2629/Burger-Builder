@@ -5,9 +5,9 @@ import BuildControl from './BuildControl/BuildControl';
 
 const controls = [
     { label: 'Salad', type: 'salad' },
-    { label: 'Bacon', type: 'bacon' },
+    { label: 'Papper', type: 'papper' },
     { label: 'Cheese', type: 'cheese' },
-    { label: 'Meat', type: 'meat' },
+    { label: 'Tometo', type: 'tometo' },
 ];
 
 const buildControls = (props) => (
@@ -23,8 +23,8 @@ const buildControls = (props) => (
         ))}
         <button 
             className={classes.OrderButton}
-            disabled={!props.purchasable}onClick={props.odered}>ORDER NOW
-            </button>
+            disabled={!props.purchasable}
+            onClick={props.ordered}>ORDER NOW</button>
     </div>
 );
 
