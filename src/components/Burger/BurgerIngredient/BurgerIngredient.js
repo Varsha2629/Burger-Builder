@@ -19,8 +19,8 @@ class BurgerIngredient extends Component {
                     </div>
                 );
                 break;
-            case ( 'tometo' ):
-                ingredient = <div className={classes.Tometo}></div>;
+            case ( 'potatopatty' ):
+                ingredient = <div className={classes.PotatoPatty}></div>;
                 break;
             case ( 'cheese' ):
                 ingredient = <div className={classes.Cheese}></div>;
