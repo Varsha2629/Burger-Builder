@@ -4,7 +4,7 @@ import Aux from '../../hoc/Auxx/Auxx';
 import Burger from '../../components/Burger/Burger';
 import BuildControls from '../../components/Burger/BuildControls/BuildControls';
 import Modal from '../../components/UI/Modal/Modal';
-import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary';
+import orderSummary from '../../components/Burger/OrderSummary/OrderSummary';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler'; 
 import axios from '../../axios-orders';
@@ -34,7 +34,7 @@ class BurgerBuilder extends Component {
         .then(response =>{
             this.setState({ ingredients:response.data });
         })
-        .catch(error =>{
+        .catch(error => {
             this.setState({ error:true });
         });
     }
@@ -91,6 +91,7 @@ class BurgerBuilder extends Component {
 
     purchaseContinueHandler = () => {
         //alert('You continue!');
+        this.setState({ loading: true });
         const order = {
             ingredients: this.state.ingredients,
             price: this.state.totalPrice,
@@ -155,10 +156,10 @@ class BurgerBuilder extends Component {
                     {orderSummary}
                 </Modal>
                    
-                {Burger}
+                {burger}
             </Aux>
         );
     }
 }
 
-export default withErrorHandler  {BurgerBuilder,axios} ;
+export default withErrorHandler  ( BurgerBuilder,axios );
