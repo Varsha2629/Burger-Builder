@@ -34,7 +34,7 @@ class BurgerBuilder extends Component {
         .then(response =>{
             this.setState({ ingredients:response.data });
         })
-        .catch(error => {
+        .catch(error =>{
             this.setState({ error:true });
         });
     }
@@ -91,7 +91,7 @@ class BurgerBuilder extends Component {
 
     purchaseContinueHandler = () => {
         //alert('You continue!');
-        this.setState({ loading: true });
+        this.setState({ loading:true });
         const order = {
             ingredients: this.state.ingredients,
             price: this.state.totalPrice,
@@ -123,7 +123,7 @@ class BurgerBuilder extends Component {
             disabledInfo[key] = disabledInfo[key] <= 0
         }
         let OrderSummary = null;
-        let burger = this.state.error?<p>ingredients can't be loaded!</p> : <Spinner />;
+        let burger = this.state.error ? <p>ingredients can't be loaded!</p> : <Spinner />;
         
         if( this.state.ingredients ){
             burger = (
@@ -162,4 +162,4 @@ class BurgerBuilder extends Component {
     }
 }
 
-export default withErrorHandler  ( BurgerBuilder,axios );
+export default withErrorHandler  (BurgerBuilder,axios) ;
